@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team | Agent Anarchy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    body {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+  </style>
+</head>
+<body onload="document.body.style.opacity='1'">
+  <header>
+    <div class="logo">Agent Anarchy</div>
+    <nav>
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="team.html" class="nav-link">Team</a>
+      <a href="news_calendar.html#news" class="nav-link">News</a>
+      <a href="news_calendar.html#calendar" class="nav-link">Calendar</a>
+    </nav>
+  </header>
+  <section class="team-section" data-aos="fade-up">
+    <h1>Meet the Operatives</h1>
+    <div class="members">
+      <div class="member" data-aos="zoom-in">
+        <img src="../png/player1.png" alt="Agent 1">
+        <h3>Agent Shadow</h3>
+        <p>Infiltration specialist with unmatched stealth tactics.</p>
+      </div>
+      <div class="member" data-aos="zoom-in" data-aos-delay="100">
+        <img src="../png/player2.png" alt="Agent 2">
+        <h3>Agent Blaze</h3>
+        <p>Demolition expert and tactical leader in high-risk zones.</p>
+      </div>
+      <div class="member" data-aos="zoom-in" data-aos-delay="200">
+        <img src="../png/player3.png" alt="Agent 3">
+        <h3>Agent Nova</h3>
+        <p>Tech genius and mastermind of digital warfare.</p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    &copy; 2025 Agent Anarchy. All rights reserved.
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    function smoothNavigate(url) {
+      document.body.style.opacity = '0';
+      setTimeout(() => { window.location.href = url; }, 500);
+    }
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        smoothNavigate(this.href);
+      });
+    });
+  </script>
+</body>
+</html>
