@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News & Calendar | Agent Anarchy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    body {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+  </style>
+</head>
+<body onload="document.body.style.opacity='1'">
+  <header>
+    <div class="logo">Agent Anarchy</div>
+    <nav>
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="team.html" class="nav-link">Team</a>
+      <a href="#news" class="nav-link">News</a>
+      <a href="#calendar" class="nav-link">Calendar</a>
+    </nav>
+  </header>
+
+  <section class="section" id="news" data-aos="fade-up">
+    <h2>Latest Intel</h2>
+    <div class="news-item" data-aos="fade-up" data-aos-delay="100">
+      <h3>Operation Ember Declassified</h3>
+      <p>The details of our latest mission have been released to operatives. Review the intel to stay ahead.</p>
+    </div>
+    <div class="news-item" data-aos="fade-up" data-aos-delay="200">
+      <h3>New Recruits Incoming</h3>
+      <p>Three new agents join the squad. Meet them in the Team section and prepare for integration.</p>
+    </div>
+  </section>
+
+  <section class="section" id="calendar" data-aos="fade-up">
+    <h2>Mission Calendar</h2>
+    <div class="event-item" data-aos="fade-up" data-aos-delay="100">
+      <h3>March 30 – Night Raid Simulation</h3>
+      <p>Prepare for a stealth mission scenario testing coordination and adaptability under pressure.</p>
+    </div>
+    <div class="event-item" data-aos="fade-up" data-aos-delay="200">
+      <h3>April 12 – Tactical Tournament</h3>
+      <p>A live competitive event featuring all active agents in head-to-head strategic combat.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Agent Anarchy. All rights reserved.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    function smoothNavigate(url) {
+      document.body.style.opacity = '0';
+      setTimeout(() => { window.location.href = url; }, 500);
+    }
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        smoothNavigate(this.href);
+      });
+    });
+  </script>
+</body>
+</html>
